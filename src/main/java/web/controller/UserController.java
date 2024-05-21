@@ -52,7 +52,7 @@ public class UserController {
         return "edit";
     }
 
-    @PostMapping("/id/update") // Метод обновления
+    @PostMapping("/id/update") 
     public String update(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             return "edit";
@@ -60,7 +60,7 @@ public class UserController {
         return "redirect:/";
     }
 
-    @PostMapping("/id/delete") // Метод удаления
+    @PostMapping("/id/delete") 
     public String delete(@RequestParam("id") long id) {
         userService.delete(id);
         return "redirect:/";
